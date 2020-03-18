@@ -36,10 +36,11 @@ bot.on('text',  async ctx =>{
             }else{
                 var pnc = "Desativado"
             }
-            ctx.reply(`Ignição: ${ign} / Panico: ${pnc}` )
+            ctx.reply(`Ignição: ${ign} / Panico: ${pnc}` );
         } 
     }else{
-       ctx.reply(`Atenção e valido digitar apenas numeros`)
+       ctx.reply(`Atenção e valido digitar apenas numeros`);
+       //teste de branch
     }
     
     

@@ -42,7 +42,7 @@ bot.on('text',  async ctx =>{
        ctx.reply(`Atenção e valido digitar apenas numeros`)
     }
     
-   
+    
 }) 
 
 bot.startPolling();

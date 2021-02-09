@@ -1,19 +1,37 @@
 const env = require('../.env');
-const api = require('./service/api');
 const Telegraf = require('telegraf');
 const sessionn = require('telegraf/session');
-const Stage = require('telegraf/stage');
-const Scene = require('telegraf/scenes/base');
 
-const { enter , leave } = Stage
+
 const bot = new Telegraf(env.token);
 
+let arr = []
 
+const teste = (data) => {
+
+    arr.map(item => {
+        bot.telegram.sendMessage(item, data.teste)
+
+        bot.telegram.sendDocument(item, 'https://pwrbot.s3-sa-east-1.amazonaws.com/uploads/pdf/0029598016db566f9e0bb29b256685fc.pdf')
+    })
+
+
+}
 bot.start(ctx => {
-    const from =  ctx.update.message.from;
-    ctx.reply(`Seja bem vindo ${from.name}`);
-    ctx.reply(`Entre com /posicoes ou /comando para iniciar...`);
+
+    const from = ctx.update.message.from;
+
+    const id_chat = ctx.update.message.chat
+
+    console.log(id_chat.id)
+
+    arr.push(id_chat.id)
+
+    ctx.reply(`Seja bem vindo ${from.name} Aqui vc recebe noticações`);
+
 })
 
 
 bot.startPolling();
+
+module.exports = { teste }

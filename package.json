@@ -9,7 +9,7 @@
   "dependencies": {
     "amqplib": "^0.6.0",
     "axios": "^0.19.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "i": "0.3.6",
     "nodemon": "^2.0.2",
     "telegraf": "3.17.3"
